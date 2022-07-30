@@ -1,9 +1,5 @@
 """Restaurant rating lister."""
 
-
-# put your code here
-
-
 def process_scores():
     scores_txt = open("scores.txt")
 
@@ -23,4 +19,12 @@ def add_restaurant(scores):
 
     scores[restaurant] = rating
 
-    
+def print_sorted_scores(scores):
+    for restaurant, rating in sorted(scores.items()):
+        print(f"{restaurant} is rated {rating}.")
+
+scores = process_scores()
+
+add_restaurant(scores)
+
+print_sorted_scores(scores)
